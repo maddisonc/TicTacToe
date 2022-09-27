@@ -9,7 +9,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +25,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void playerDisplay ()
+    public void playerDisplay ()
     {
         Button proofOfConcept = (Button) findViewById(R.id.conceptProofButton);
         proofOfConcept.setOnClickListener(new View.OnClickListener() {
+            int pTurn = 1;
             @Override
             public void onClick (View v)
             {
-                Log.i("info", "Player _'s turn");
+                if (pTurn % 2 == 0)
+                {
+                    Log.i("info", "Player " + 2 + "'s turn");
+                }
+                else {
+                    Log.i("info", "Player " + 1 + "'s turn");
+                }
+                pTurn++;
             } // end onCLick
         });
     } // end next button handler

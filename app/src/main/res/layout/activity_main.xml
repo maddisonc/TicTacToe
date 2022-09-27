@@ -11,13 +11,15 @@
         android:id="@+id/player1Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player One" />
+        android:text="Player One"
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/player2Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player Two" />
+        android:text="Player Two"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/conceptProofButton"
