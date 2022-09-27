@@ -11,4 +11,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public static int switchPlayer(int player)
+    {
+        if(player == 1)
+            player = 2;
+        else
+            player = 1;
+        return player;
+    }//end method
 }
