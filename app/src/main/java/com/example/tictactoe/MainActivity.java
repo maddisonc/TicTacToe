@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         else
             player = 1;
         return player;
-    }//end method
+    }//end methodx
 }
 
 
