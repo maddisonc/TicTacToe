@@ -5,7 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="MainActivity">
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/player1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player One"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/player2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Two"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/conceptProofButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proof Of Concept" />
 
     <RelativeLayout
         android:layout_width="match_parent"
