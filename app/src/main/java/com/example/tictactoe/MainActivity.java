@@ -39,6 +39,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        TextView p1Text = (TextView)findViewById(R.id.player1Text);
+        TextView p2Text = (TextView)findViewById(R.id.player2Text);
+
+        Button proof = (Button)findViewById(R.id.conceptProofButton);
+
+        proof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playerDisplay(p1Text, p2Text);
+            }
+        }); // listener that calls next activity method
+
+
         Button buttonReset = findViewById(R.id.button_reset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,22 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void draw() {
     }
-}
 
 
-        TextView p1Text = (TextView)findViewById(R.id.player1Text);
-        TextView p2Text = (TextView)findViewById(R.id.player2Text);
 
-        Button proof = (Button)findViewById(R.id.conceptProofButton);
-
-        proof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerDisplay(p1Text, p2Text);
-            }
-        }); // listener that calls next activity method
-
-    }
 
     public void playerDisplay (TextView player1Text, TextView player2Text)
     {
