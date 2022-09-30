@@ -130,16 +130,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void player1Wins() {
+        resetBoard();
     }
 
     private void player2Wins() {
+        resetBoard();
     }
 
     private void draw() {
+        resetBoard();
     }
-
-
-
 
     public void playerDisplay (TextView player1Text, TextView player2Text)
     {
@@ -165,5 +165,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     } // end next button handler
 
+    private void resetBoard()
+    {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+            }
+        }
+        roundCount = 0;
+        player1Turn = true;
+    }
 
 }
