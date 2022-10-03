@@ -40,15 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView2.setText(Integer.toString(player));
             }
         });
-    }
-    public static int switchPlayer(int player)
-    {
-        if(player == 1)
-            player = 2;
-        else
-            player = 1;
-        return player;
-    }//end methodxded
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
@@ -83,6 +74,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
+    public static int switchPlayer(int player)
+    {
+        if(player == 1)
+            player = 2;
+        else
+            player = 1;
+        return player;
+    }//end methodxded
 
     @Override
     public void onClick(View v) {
@@ -160,8 +160,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void draw() {
     }
-
-
 
 
     public void playerDisplay (TextView player1Text, TextView player2Text)
