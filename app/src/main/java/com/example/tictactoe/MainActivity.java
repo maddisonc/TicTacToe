@@ -68,9 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (player1Turn) {
-            ((Button) v).setText("X");
+            ((Button) v).setBackgroundResource(R.drawable.alligator);
+
         } else {
-            ((Button) v).setText("O");
+            ((Button) v).setBackgroundResource(R.drawable.duck_icon);
         }
 
         roundCount++;
