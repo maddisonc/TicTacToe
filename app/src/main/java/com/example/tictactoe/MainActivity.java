@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.example.tictactoe.R;
 import android.graphics.Color;
 import android.util.Log;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -153,12 +155,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void player1Wins() {
+        player1Points++;
+        Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void player2Wins() {
+        player2Points++;
+        Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void draw() {
+        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+
     }
 
 
