@@ -155,18 +155,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void player1Wins() {
+        resetBoard();
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void player2Wins() {
         player2Points++;
+        resetBoard();
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-
+        resetBoard();
     }
 
 
@@ -193,5 +195,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } // end onCLick
         });
     } // end next button handler
+
+    private void resetBoard()
+    {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                buttons[i][j].setText("");
+            }
+        }
+        roundCount = 0;
+        player1Turn = true;
+    }
 
 }
