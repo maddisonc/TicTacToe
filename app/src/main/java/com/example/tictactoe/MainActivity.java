@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.example.tictactoe.R;
 import android.graphics.Color;
 import android.util.Log;
 
@@ -21,11 +22,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-
+    
+    private int player = 1;
+    Button btn;
+    TextView textView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        btn = (Button) findViewById(R.id.btn);
+        textView2 = (TextView) findViewById(R.id.textView2);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = switchPlayer(player);
+                textView2.setText(Integer.toString(player));
+            }
+        });
+    }
+    public static int switchPlayer(int player)
+    {
+        if(player == 1)
+            player = 2;
+        else
+            player = 1;
+        return player;
+    }//end methodxded
 
         textViewPlayer1 = findViewById(R.id.text_view_p1);
         textViewPlayer2 = findViewById(R.id.text_view_p2);
@@ -164,6 +187,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } // end onCLick
         });
     } // end next button handler
-
 
 }
