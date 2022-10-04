@@ -32,19 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        btn = (Button) findViewById(R.id.btn);
-        textView2 = (TextView) findViewById(R.id.textView2);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                player = switchPlayer(player);
-                textView2.setText(Integer.toString(player));
-            }
-        });
 
-        textViewPlayer1 = findViewById(R.id.text_view_p1);
-        textViewPlayer2 = findViewById(R.id.text_view_p2);
+
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -55,48 +44,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        TextView p1Text = (TextView)findViewById(R.id.player1Text);
-        TextView p2Text = (TextView)findViewById(R.id.player2Text);
-
-        Button proof = (Button)findViewById(R.id.conceptProofButton);
-
-        proof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                playerDisplay(p1Text, p2Text);
-            }
-        }); // listener that calls next activity method
-
 
         Button buttonReset = findViewById(R.id.button_reset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 resetBoard();
+                player1Turn = true;
             }
         });
     }
 
-    public static int switchPlayer(int player)
-    {
-        if(player == 1)
-            player = 2;
-        else
-            player = 1;
-        return player;
-    }//end methodxded
+//    public static int switchPlayer(int player)
+//    {
+//        if(player == 1)
+//            player = 2;
+//        else
+//            player = 1;
+//        return player;
+//    }//end methodxded
 
     @Override
     public void onClick(View v) {
+        TextView p1Text = (TextView)findViewById(R.id.player1Text);
+        TextView p2Text = (TextView)findViewById(R.id.player2Text);
+
         if (!((Button) v).getText().toString().equals("")) {
             return;
         }
 
         if (player1Turn) {
             ((Button) v).setText("\uD83D\uDC0A");
+            Log.i("info", "Player " + 2 + "'s turn");
+            p1Text.setBackgroundColor(Color.WHITE);
+            p2Text.setBackgroundColor(Color.YELLOW);
 
         } else {
             ((Button) v).setText("\uD83E\uDD86");
+            Log.i("info", "Player " + 2 + "'s turn");
+            p1Text.setBackgroundColor(Color.YELLOW);
+            p2Text.setBackgroundColor(Color.WHITE);
         }
 
         roundCount++;
@@ -170,29 +157,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void playerDisplay (TextView player1Text, TextView player2Text)
-    {
-        Button proofOfConcept = (Button) findViewById(R.id.conceptProofButton);
-        proofOfConcept.setOnClickListener(new View.OnClickListener() {
-            int pTurn = 1;
-            @Override
-            public void onClick (View v)
-            {
-                if (pTurn % 2 == 0)
-                {
-                    Log.i("info", "Player " + 2 + "'s turn");
-                    player1Text.setBackgroundColor(Color.WHITE);
-                    player2Text.setBackgroundColor(Color.YELLOW);
-                }
-                else {
-                    Log.i("info", "Player " + 1 + "'s turn");
-                    player2Text.setBackgroundColor(Color.WHITE);
-                    player1Text.setBackgroundColor(Color.YELLOW);
-                }
-                pTurn++;
-            } // end onCLick
-        });
-    } // end next button handler
+//    public void playerDisplay (TextView player1Text, TextView player2Text)
+//    {
+//        Button proofOfConcept = (Button) findViewById(R.id.conceptProofButton);
+//        proofOfConcept.setOnClickListener(new View.OnClickListener() {
+//            int pTurn = 1;
+//            @Override
+//            public void onClick (View v)
+//            {
+//                if (pTurn % 2 == 0)
+//                {
+//                    Log.i("info", "Player " + 2 + "'s turn");
+//                    player1Text.setBackgroundColor(Color.WHITE);
+//                    player2Text.setBackgroundColor(Color.YELLOW);
+//                }
+//                else {
+//                    Log.i("info", "Player " + 1 + "'s turn");
+//                    player2Text.setBackgroundColor(Color.WHITE);
+//                    player1Text.setBackgroundColor(Color.YELLOW);
+//                }
+//                pTurn++;
+//            } // end onCLick
+//        });
+//    } // end next button handler
 
     private void resetBoard()
     {
@@ -203,6 +190,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         roundCount = 0;
         player1Turn = true;
+
+        TextView p1Text = (TextView)findViewById(R.id.player1Text);
+        TextView p2Text = (TextView)findViewById(R.id.player2Text);
+
+        p1Text.setBackgroundColor(Color.YELLOW);
+        p2Text.setBackgroundColor(Color.WHITE);
     }
 
 }
