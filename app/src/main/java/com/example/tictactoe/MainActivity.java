@@ -93,9 +93,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if (player1Turn) {
-            ((Button) v).setText("X");
+            ((Button) v).setText("\uD83D\uDC0A");
+
         } else {
-            ((Button) v).setText("O");
+            ((Button) v).setText("\uD83E\uDD86");
         }
 
         roundCount++;
