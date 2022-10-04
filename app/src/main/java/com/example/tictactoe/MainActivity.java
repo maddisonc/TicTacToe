@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                resetBoard();
             }
         });
     }
@@ -155,20 +155,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void player1Wins() {
-        resetBoard();
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void player2Wins() {
         player2Points++;
-        resetBoard();
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
     }
 
     private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        resetBoard();
     }
 
 
