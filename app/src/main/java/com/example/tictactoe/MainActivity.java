@@ -1,6 +1,8 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
-    
+
+    final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.ah );
     private int player = 1;
     Button btn;
     TextView textView2;
@@ -158,11 +161,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void player1Wins() {
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
+        mediaPlayer.start();
     }
 
     private void player2Wins() {
         player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
+        mediaPlayer.start();
     }
 
     private void draw() {
