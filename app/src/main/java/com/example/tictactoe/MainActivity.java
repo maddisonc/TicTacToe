@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+    private MediaPlayer mp;
 
-    final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.ah );
     private int player = 1;
     Button btn;
     TextView textView2;
@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
+        mp = MediaPlayer.create(this,R.raw.sound );
+
         btn = (Button) findViewById(R.id.btn);
         textView2 = (TextView) findViewById(R.id.textView2);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -161,13 +163,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void player1Wins() {
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
-        mediaPlayer.start();
+        mp.start();
     }
 
     private void player2Wins() {
         player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
-        mediaPlayer.start();
     }
 
     private void draw() {
@@ -209,5 +210,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         roundCount = 0;
         player1Turn = true;
     }
-
 }
