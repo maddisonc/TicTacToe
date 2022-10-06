@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ((Button) v).setText("\uD83D\uDC0A");
             Log.i("info", "Player " + 2 + "'s turn");
             p1Text.setBackgroundColor(Color.WHITE);
-            p2Text.setBackgroundColor(Color.YELLOW);
+            p2Text.setBackgroundColor(Color.rgb(255, 242, 204));
 
         } else {
             ((Button) v).setText("\uD83E\uDD86");
             Log.i("info", "Player " + 2 + "'s turn");
-            p1Text.setBackgroundColor(Color.YELLOW);
+            p1Text.setBackgroundColor(Color.rgb(255, 242, 204));
             p2Text.setBackgroundColor(Color.WHITE);
         }
 
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView p1Text = (TextView)findViewById(R.id.player1Text);
         TextView p2Text = (TextView)findViewById(R.id.player2Text);
 
-        p1Text.setBackgroundColor(Color.YELLOW);
+        p1Text.setBackgroundColor(Color.rgb(255, 242, 204));
         p2Text.setBackgroundColor(Color.WHITE);
     }
 
