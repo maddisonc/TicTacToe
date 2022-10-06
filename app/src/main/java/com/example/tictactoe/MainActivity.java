@@ -1,6 +1,8 @@
 package com.example.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView textViewPlayer1;
     private TextView textViewPlayer2;
+    private MediaPlayer mp;
 
     private int player = 1;
     Button btn;
@@ -32,6 +35,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mp = MediaPlayer.create(this,R.raw.sound );
+
+        btn = (Button) findViewById(R.id.btn);
+        textView2 = (TextView) findViewById(R.id.textView2);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player = switchPlayer(player);
+                textView2.setText(Integer.toString(player));
+            }
+        });
+
 
 
 
@@ -145,11 +160,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void player1Wins() {
         player1Points++;
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
+        mp.setVolume(1000,1000);
+        mp.start();
     }
 
     private void player2Wins() {
         player2Points++;
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
+        mp.setVolume(1000,1000);
+        mp.start();
     }
 
     private void draw() {
@@ -197,5 +216,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         p1Text.setBackgroundColor(Color.rgb(255, 242, 204));
         p2Text.setBackgroundColor(Color.WHITE);
     }
-
 }
