@@ -37,18 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mp = MediaPlayer.create(this,R.raw.sound );
 
-        btn = (Button) findViewById(R.id.btn);
-        textView2 = (TextView) findViewById(R.id.textView2);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                player = switchPlayer(player);
-                textView2.setText(Integer.toString(player));
-            }
-        });
-
-
-
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
