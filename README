@@ -1,2 +1,2 @@
-Title: "TicTacToe" ()
+Title: "TicTacToe" (9/22/22-10/10/22)
 This is a collaborative project with my high school advanced Java classmates, Janeth Gomez (Janeth39), Yashveer Sekhon (Yashveer1212), and Jin DeGuzman (jinDeGuzman).  We built a two-player version of tic-tac-toe that includes ducks and crocodiles rather than x's and o's.  We learned about implementing scrums to effectively plan out group projects, branching, tables in Android Studio, and adding sound to apps.   This assignment required that we include a grid, cells, a functioning win/lose system, the ability to switch turns, and evidence of our scrum folder usage.  I focused on the reset button and the code to switch players.
